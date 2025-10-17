@@ -1,0 +1,7 @@
+/ /infotech.html 200
+
+# Proxy API calls to backend (replace <BACKEND_HOST>)
+/book https://<BACKEND_HOST>/book 200!
+/bookings/* https://<BACKEND_HOST>/bookings/:splat 200!
+/export https://<BACKEND_HOST>/export 200!
+/images/* https://<BACKEND_HOST>/images/:splat 200!

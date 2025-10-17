@@ -1,0 +1,35 @@
+[build]
+  # We serve static files from the repository root. If you have a build step, replace command.
+  publish = "."
+  command = ""
+
+# Redirect root to the main frontend file
+[[redirects]]
+  from = "/"
+  to = "/infotech.html"
+  status = 200
+
+# Proxy API calls to your backend (replace <BACKEND_HOST> with your backend host, e.g. ekawade.onrender.com)
+[[redirects]]
+  from = "/book"
+  to = "https://<BACKEND_HOST>/book"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/bookings/*"
+  to = "https://<BACKEND_HOST>/bookings/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/export"
+  to = "https://<BACKEND_HOST>/export"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/images/*"
+  to = "https://<BACKEND_HOST>/images/:splat"
+  status = 200
+  force = true
