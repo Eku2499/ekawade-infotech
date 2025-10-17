@@ -38,7 +38,7 @@ Security
 - For production, protect the admin route with authentication and run behind TLS (e.g., use a reverse proxy with Let's Encrypt).
 
 Domain setup
-- Point `www.ekawadeinfotech.in` A record to the server IP and configure TLS at the reverse proxy (nginx) or use the hosting provider's TLS feature.
+- Point `www.ekawadeinfotech.site` A record to the server IP and configure TLS at the reverse proxy (nginx) or use the hosting provider's TLS feature.
 
 Docker
 ------
@@ -80,5 +80,6 @@ To allow GitHub Actions to push the built image to Docker Hub, add the following
 
 The CI workflow will tag the image as `<DOCKERHUB_USERNAME>/ekawade-infotech:latest` and also with the commit SHA.
 [![Netlify Status](https://api.netlify.com/api/v1/badges/6b6c731a-a54d-4780-93ea-5c9fa801c5ef/deploy-status)](https://app.netlify.com/projects/ekawadeinfotech/deploys)
+
 
 
