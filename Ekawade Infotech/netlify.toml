@@ -3,6 +3,12 @@
   publish = "."
   command = ""
 
+[functions]
+  node_bundler = "esbuild"
+
+[build.environment]
+  NODE_VERSION = "18"
+  
 # Redirect root to the main frontend file
 [[redirects]]
   from = "/"
@@ -33,3 +39,4 @@
   to = "https://<BACKEND_HOST>/images/:splat"
   status = 200
   force = true
+
