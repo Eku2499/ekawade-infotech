@@ -1,6 +1,6 @@
  [build]
   base = "Ekawade Infotech"
-  publish = "Ekawade Infotech"
+  publish = "."
   command = ""
 
 # Redirect root to the main frontend file
@@ -33,6 +33,7 @@
   to = "https://<BACKEND_HOST>/images/:splat"
   status = 200
   force = true
+
 
 
 
