@@ -1,5 +1,5 @@
 [build]
-  bash "Ekawade Infotech"
+  bash="Ekawade Infotech"
   publish = "."
   command = ""
 
@@ -32,4 +32,5 @@
   to = "https://ekawade.onrender.com/images/:splat"
   status = 200
   force = true
+
 
