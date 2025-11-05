@@ -1,12 +1,11 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Ekawade Infotech</title>
-   <!-- ✅ CDN Font -->
+
+  <!-- ✅ Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
   <style>
@@ -17,20 +16,18 @@
     }
 
     * {
-      
       box-sizing: border-box;
       scroll-behavior: smooth;
     }
 
     body {
-     font-family: 'Poppins', sans-serif;
+      font-family: 'Poppins', sans-serif;
       margin: 0;
       background-color: var(--light-blue);
       color: #003366;
       overflow-x: hidden;
     }
 
-    /* Navbar */
     nav {
       background-color: #004080;
       padding: 1rem;
@@ -39,11 +36,6 @@
       top: 0;
       z-index: 1000;
     }
-    header img {
-      width: 50px;
-      height: 50px;
-    }
-
 
     nav a {
       color: white;
@@ -64,14 +56,17 @@
       background-color: #cce0ff;
     }
 
+    header img {
+      width: 100px;
+      height: 100px;
+      display: block;
+      margin: 0 auto 1rem;
+    }
+
     header h1 {
       margin: 0;
       font-size: 2.5rem;
       color: var(--blue);
-    }
-
-    header p {
-      font-size: 1.1rem;
     }
 
     section {
@@ -113,26 +108,10 @@
       }
     }
 
-    .card svg {
-      width: 50px;
-      height: 50px;
-      margin-bottom: 1rem;
-      fill: var(--blue);
-      transition: transform 0.3s;
-    }
-
-    img[alt="Web Design"] {
-      color: var(--blue);
-    }
-
-    .card:hover svg {
-      transform: scale(1.1);
-    }
-
     .card h2 {
-      margin-top: 0;
       color: var(--blue);
       font-size: 1.3rem;
+      margin-top: 0;
     }
 
     .booking, .about, .contact {
@@ -181,7 +160,6 @@
       margin: 0.3rem 0;
     }
 
-    /* Responsive Design */
     @media (max-width: 768px) {
       .services {
         flex-direction: column;
@@ -199,6 +177,7 @@
     }
   </style>
 </head>
+
 <body>
 
   <nav>
@@ -209,96 +188,51 @@
     <a href="#contact">Contact</a>
   </nav>
 
- <header id="home">
-  <img src="images\chipupdate.svg" alt="Ekawade Infotech Logo"
-       style="width: 100px; height: 100px; margin-bottom: 1rem; display: block; margin-left: auto; margin-right: auto;" />
-  <h1>Ekawade Infotech</h1>
-  <p>IT Products & Services | Surveillance Systems | Biometric Solutions</p>
-</header>
-
+  <header id="home">
+    <img src="images/chipupdate.svg" alt="Ekawade Infotech Logo" />
+    <h1>Ekawade Infotech</h1>
+    <p>IT Products & Services | Surveillance Systems | Biometric Solutions</p>
+  </header>
 
   <section id="about" class="about">
     <h2>About Us</h2>
-    <p>Ekawade Infotech is a trusted IT solutions provider based in Goa, delivering innovative technologies in the domains of IT infrastructure, security surveillance, and biometric systems. Our mission is to empower businesses with reliable technology and professional support.</p>
+    <p>Ekawade Infotech is a trusted IT solutions provider based in Goa, delivering innovative technologies in IT infrastructure, security surveillance, and biometric systems.</p>
   </section>
 
   <section id="services" class="services">
     <div class="card">
-      <img src="https://www.svgrepo.com/show/408648/smart-home-electric-automation-electricity.svg" alt="IT Products & Services" style="width: 50px;height: 50px;" />
+      <img src="https://www.svgrepo.com/show/408648/smart-home-electric-automation-electricity.svg" alt="IT Products" width="50" height="50" />
       <h2>IT Products & Services</h2>
-      <p>We offer complete IT solutions including software, hardware, and professional consulting tailored for your business needs.</p>
+      <p>Complete IT solutions including software, hardware, and consulting tailored to your business.</p>
     </div>
     <div class="card">
-      <img src="https://www.svgrepo.com/show/201010/browser-web-design.svg" alt="Web Design" style="width: 50px;height:50px;" />
+      <img src="https://www.svgrepo.com/show/201010/browser-web-design.svg" alt="Web Design" width="50" height="50" />
       <h2>Website Design</h2>
-      <p>We create stunning and responsive websites tailored to your business needs, ensuring a seamless user experience.</p>
+      <p>We create stunning, responsive websites ensuring seamless user experience.</p>
     </div>
     <div class="card">
-      <img src="https://www.svgrepo.com/show/132062/surveillance-camera.svg" alt="Surveillance Systems" style="width: 54px;height: 54px;" />
+      <img src="https://www.svgrepo.com/show/132062/surveillance-camera.svg" alt="Surveillance" width="54" height="54" />
       <h2>Surveillance Systems</h2>
-      <p>Get secured with our CCTV and surveillance installations with smart technology and ongoing support.</p>
+      <p>Smart CCTV and security installations with ongoing support.</p>
     </div>
     <div class="card">
-  <img src="https://www.svgrepo.com/show/144787/fingerprint-scanning.svg" alt="Biometric Systems" style="width:50px;height:50px;" />
+      <img src="https://www.svgrepo.com/show/144787/fingerprint-scanning.svg" alt="Biometric" width="50" height="50" />
       <h2>Biometric Systems</h2>
-      <p>Implement high-grade biometric systems with fingerprint, facial, and retina recognition for your premises.</p>
+      <p>Fingerprint, facial, and retina recognition systems for secure access.</p>
     </div>
   </section>
 
- 
   <section id="booking" class="booking">
     <h2>Schedule a Booking</h2>
-      <!-- Booking Form -->
-      <div id="bookingMessage" role="status" aria-live="polite" style="margin-bottom:0.5rem;font-weight:600;"></div>
-        <div id="bookingMessage" aria-live="polite" style="text-align:center;margin-bottom:1rem;color:#003366;"></div>
-        <form id="bookingForm">
-          <input type="text" name="name" placeholder="Name" required>
-          <input type="email" name="email" placeholder="Email" required>
-          <input type="date" name="date" required>
-          <input type="text" name="phone" placeholder="Phone Number" required>
-          <button type="submit">Book</button>
-        </form>
-        <script>
-        const bookingMessage = document.getElementById('bookingMessage');
-        function showMessage(text, isError = false) {
-          bookingMessage.textContent = text;
-          bookingMessage.style.color = isError ? '#a00' : 'var(--blue)';
-        }
+    <div id="bookingMessage" role="status" aria-live="polite" style="text-align:center;margin-bottom:1rem;font-weight:600;"></div>
 
-        document.getElementById('bookingForm').addEventListener('submit', async function(e) {
-          e.preventDefault();
-          bookingMessage.textContent = '';
-          const formData = new FormData(e.target);
-          const payload = {
-            name: formData.get('name'),
-            email: formData.get('email'),
-            date: formData.get('date'),
-            phone: formData.get('phone')
-          };
-
-          try {
-            const res = await fetch('http://127.0.0.1:5000/book', {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify(payload)
-            });
-
-            const data = await res.json().catch(() => null);
-            if (!res.ok) {
-              const msg = data && data.message ? data.message : 'Server error';
-              showMessage('Booking failed: ' + msg, true);
-              return;
-            }
-
-            // success
-            showMessage('Booking successful — we recorded your appointment.', false);
-            e.target.reset();
-          } catch (err) {
-            showMessage('Network error: ' + (err && err.message ? err.message : ''), true);
-            console.error('Booking submit failed', err);
-          }
-        });
-        </script>
+    <form id="bookingForm">
+      <input type="text" name="name" placeholder="Name" required>
+      <input type="email" name="email" placeholder="Email" required>
+      <input type="date" name="date" required>
+      <input type="text" name="phone" placeholder="Phone Number" required>
+      <button type="submit">Book</button>
+    </form>
   </section>
 
   <section id="contact" class="contact">
@@ -306,35 +240,52 @@
     <p><strong>Email:</strong> ekawadeinfotech@gmail.com</p>
     <p><strong>Phone:</strong> 7030304581</p>
     <p><strong>Address:</strong> Desai Nagar, Sanquelim, Goa</p>
-
     <a href="https://www.instagram.com/ekawade_infotech" target="_blank">
-    <img src="https://www.svgrepo.com/show/512399/instagram-167.svg" alt="Instagram" width="20" height="20">
-    </a>   
+      <img src="https://www.svgrepo.com/show/512399/instagram-167.svg" alt="Instagram" width="20" height="20">
+    </a>
     <a href="https://wa.me/7030304581" target="_blank">
-  <img src="https://www.svgrepo.com/show/510342/whatsapp.svg" alt="WhatsApp" width="30" height="20">
-</a>
-
- 
-
+      <img src="https://www.svgrepo.com/show/510342/whatsapp.svg" alt="WhatsApp" width="30" height="20">
+    </a>
   </section>
 
   <footer>
     <p>&copy; 2025 Ekawade Infotech. All rights reserved.</p>
   </footer>
 
+  <!-- ✅ EmailJS Booking Integration -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script>
-    document.getElementById('bookingForm').addEventListener('submit', function(event) {
-      event.preventDefault();
-      alert('Booking submitted! We will contact you soon.');
-      this.reset();
+    (function(){
+      emailjs.init("NPj3F96VQd_ZBYBM9"); // 🔑 Replace with your EmailJS Public Key
+    })();
+
+    const bookingForm = document.getElementById("bookingForm");
+    const bookingMessage = document.getElementById("bookingMessage");
+
+    bookingForm.addEventListener("submit", function(e) {
+      e.preventDefault();
+      bookingMessage.textContent = "Sending booking request...";
+      bookingMessage.style.color = "#003366";
+
+      const params = {
+        name: bookingForm.name.value,
+        email: bookingForm.email.value,
+        date: bookingForm.date.value,
+        phone: bookingForm.phone.value,
+      };
+
+      emailjs.send("service_79cmrdr", "template_nbr71hm", params)
+        .then(() => {
+          bookingMessage.textContent = "✅ Booking sent successfully! We’ll contact you soon.";
+          bookingMessage.style.color = "green";
+          bookingForm.reset();
+        })
+        .catch((error) => {
+          console.error("EmailJS Error:", error);
+          bookingMessage.textContent = "❌ Failed to send booking. Please try again.";
+          bookingMessage.style.color = "red";
+        });
     });
   </script>
-
 </body>
 </html>
-
-
-
-
-
-
