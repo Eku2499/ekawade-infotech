@@ -7,33 +7,27 @@
   to = "/infotech.html"
   status = 200
 
-
-# Proxy API calls to your backend (replace <BACKEND_HOST> with your backend host, e.g. ekawade.onrender.com)
+# Proxy API calls to your backend
 [[redirects]]
   from = "/book"
-  to = "https://<BACKEND_HOST>/book"
+  to = "https://ekawade.onrender.com/book"
   status = 200
   force = true
 
 [[redirects]]
   from = "/bookings/*"
-  to = "https://<BACKEND_HOST>/bookings/:splat"
+  to = "https://ekawade.onrender.com/bookings/:splat"
   status = 200
   force = true
 
 [[redirects]]
   from = "/export"
-  to = "https://<BACKEND_HOST>/export"
+  to = "https://ekawade.onrender.com/export"
   status = 200
   force = true
 
 [[redirects]]
   from = "/images/*"
-  to = "https://<BACKEND_HOST>/images/:splat"
+  to = "https://ekawade.onrender.com/images/:splat"
   status = 200
   force = true
-
-
-
-
-
