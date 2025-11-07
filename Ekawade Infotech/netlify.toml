@@ -1,7 +1,8 @@
-
 [build]
-  publish = "."
-  command = "echo 'Forcing rebuild'"
+  publish = "Ekawade Infotech"
+  command = ""
 
-[build.environment]
-  NETLIFY_USE_YARN_CACHE = "false"
+[[redirects]]
+  from = "/*"
+  to = "/infotech.html"
+  status = 200
