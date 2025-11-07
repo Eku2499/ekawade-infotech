@@ -1,5 +1,5 @@
 [build]
-  publish = "Ekawade Infotech"
+  publish = "."
   command = ""
 
 [[redirects]]
