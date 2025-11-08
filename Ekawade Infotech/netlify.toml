@@ -1,9 +1,34 @@
 [build]
-  publish = "."
+  base = "Ekawade Infotech"
+  publish = "Ekawade Infotech"
   command = ""
 
-# Redirects all traffic to a specific root file named 'main.html'
 [[redirects]]
   from = "/*"
   to = "/infotech.html"
   status = 200
+
+# --- API Proxy routes (optional) ---
+[[redirects]]
+  from = "/book"
+  to = "https://<YOUR_BACKEND_HOST>/book"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/bookings/*"
+  to = "https://<YOUR_BACKEND_HOST>/bookings/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/export"
+  to = "https://<YOUR_BACKEND_HOST>/export"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/images/*"
+  to = "https://<YOUR_BACKEND_HOST>/images/:splat"
+  status = 200
+  force = true
