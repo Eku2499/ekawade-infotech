@@ -4,5 +4,6 @@
 
 [[redirects]]
   from = "/*"
-  to = "/infotech.html"
+  to = "Ekawade Infotech/netlify.toml"
   status = 200
+
