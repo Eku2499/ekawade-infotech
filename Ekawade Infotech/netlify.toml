@@ -7,3 +7,6 @@
   from = "/*"
   to = "/infotech.html"
   status = 200
+
+[[plugins]]
+package = "netlify-purge-cloudflare-on-deploy"
