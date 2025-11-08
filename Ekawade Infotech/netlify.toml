@@ -2,8 +2,8 @@
   publish = "."
   command = ""
 
+# Redirects all traffic to a specific root file named 'main.html'
 [[redirects]]
   from = "/*"
-  to = "Ekawade Infotech/netlify.toml"
+  to = "/infotech.html"
   status = 200
-
