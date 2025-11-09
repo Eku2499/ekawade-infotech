@@ -1,9 +1,0 @@
-[build]
-  base = "Ekawade Infotech"
-  publish = "Ekawade Infotech"
-  command = ""
-
-[[redirects]]
-  from = "/*"
-  to = "/infotech.html"
-  status = 200
