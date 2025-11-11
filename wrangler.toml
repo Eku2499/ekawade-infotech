@@ -1,0 +1,10 @@
+name = "ekawade-infotech"
+main = "index.js"
+compatibility_date = "2025-11-11"
+
+[site]
+bucket = "Ekawade Infotech"    # Folder containing index.html
+entry-point = "."
+
+[build]
+command = "echo 'No build needed'"
