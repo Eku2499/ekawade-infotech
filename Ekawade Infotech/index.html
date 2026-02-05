@@ -133,6 +133,20 @@
     }
 
     form button:hover { background-color: #003366; }
+    footer { background-color: #cce0ff; text-align: center; padding: 2rem 1rem; } footer p { margin: 0.3rem 0; } @media (max-width: 768px) { .services { flex-direction: column; align-items: center; } .card { width: 90%; } .booking, .about, .contact { width: 90%; margin: 1rem auto; } }
+
+    /* Modal Button Styling */
+    #confirmBtn, #cancelBtn {
+      padding: 0.75rem 1.5rem;
+      border-radius: 6px;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+      flex: 1;
+    }
+
+    #confirmBtn { background-color: var(--blue); color: white; }
+    #cancelBtn { background-color: #ddd; color: #333; }
 
     footer {
       background-color: #cce0ff;
@@ -140,121 +154,72 @@
       padding: 2rem 1rem;
     }
 
-    footer p { margin: 0.3rem 0; }
-
-    @media (max-width: 768px) {
-      .services { flex-direction: column; align-items: center; }
-      .card { width: 90%; }
-      .booking, .about, .contact { width: 90%; margin: 1rem auto; }
-    }
+    footer p { margin: 0.3rem 0; } @media (max-width: 768px) { .services { flex-direction: column; align-items: center; } .card { width: 90%; } .booking, .about, .contact { width: 90%; margin: 1rem auto; } }
   </style>
 </head>
 
 <body>
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#services">Services</a>
-    <a href="#booking">Booking</a>
-    <a href="#contact">Contact</a>
-  </nav>
 
-  <header id="home">
-    <img src="images/chip.svg" alt="Ekawade Infotech Logo" />
-    <h1>Ekawade Infotech</h1>
-    <p>IT Products & Services | Surveillance Systems | Biometric Solutions</p>
-  </header>
+<nav>
+  <a href="#home">Home</a>
+  <a href="#about">About</a>
+  <a href="#services">Services</a>
+  <a href="#booking">Booking</a>
+  <a href="#contact">Contact</a>
+</nav>
 
-  <section id="about" class="about">
-    <h2>About Us</h2>
-    <p>Ekawade Infotech is a trusted IT solutions provider based in Goa, delivering innovative technologies in IT infrastructure, security surveillance, and biometric systems.</p>
-  </section>
+<header id="home">
+  <img src="images/chip.svg" alt="Ekawade Infotech Logo" />
+  <h1>Ekawade Infotech</h1>
+  <p>IT Products & Services | Surveillance Systems | Biometric Solutions</p>
+</header>
 
-  <section id="services" class="services">
-    <div class="card">
-      <img src="https://www.svgrepo.com/show/408648/smart-home-electric-automation-electricity.svg" alt="IT Products" width="50" height="50" />
-      <h2>IT Products & Services</h2>
-      <p>Complete IT solutions including software, hardware, and consulting tailored to your business.</p>
-    </div>
-    <div class="card">
-      <img src="https://www.svgrepo.com/show/201010/browser-web-design.svg" alt="Web Design" width="50" height="50" />
-      <h2>Website Design</h2>
-      <p>We create stunning, responsive websites ensuring seamless user experience.</p>
-    </div>
-    <div class="card">
-      <img src="https://www.svgrepo.com/show/132062/surveillance-camera.svg" alt="Surveillance" width="54" height="54" />
-      <h2>Surveillance Systems</h2>
-      <p>Smart CCTV and security installations with ongoing support.</p>
-    </div>
-    <div class="card">
-      <img src="https://www.svgrepo.com/show/144787/fingerprint-scanning.svg" alt="Biometric" width="50" height="50" />
-      <h2>Biometric Systems</h2>
-      <p>Fingerprint, facial, and retina recognition systems for secure access.</p>
-    </div>
-  </section>
+<section id="about" class="about">
+  <h2>About Us</h2>
+  <p>Ekawade Infotech is a trusted IT solutions provider based in Goa.</p>
+</section>
 
-  <section id="booking" class="booking">
-    <h2>Schedule a Booking</h2>
-    <div id="bookingMessage" role="status" aria-live="polite" style="text-align:center;margin-bottom:1rem;font-weight:600;"></div>
+<section id="services" class="services"> <div class="card"> <img src="https://www.svgrepo.com/show/408648/smart-home-electric-automation-electricity.svg" alt="IT Products" width="50" height="50" /> <h2>IT Products & Services</h2> <p>Complete IT solutions including software, hardware, and consulting tailored to your business.</p> </div> <div class="card"> <img src="https://www.svgrepo.com/show/201010/browser-web-design.svg" alt="Web Design" width="50" height="50" /> <h2>Website Design</h2> <p>We create stunning, responsive websites ensuring seamless user experience.</p> </div> <div class="card"> <img src="https://www.svgrepo.com/show/132062/surveillance-camera.svg" alt="Surveillance" width="54" height="54" /> <h2>Surveillance Systems</h2> <p>Smart CCTV and security installations with ongoing support.</p> </div> <div class="card"> <img src="https://www.svgrepo.com/show/144787/fingerprint-scanning.svg" alt="Biometric" width="50" height="50" /> <h2>Biometric Systems</h2> <p>Fingerprint, facial, and retina recognition systems for secure access.</p> </div> </section>
 
-    <form id="bookingForm">
-      <select name="service" required>
-  <option value="" disabled selected>Select Service</option>
-  <option value="IT Products & Services">IT Products & Services</option>
-  <option value="Website Design">Website Design</option>
-  <option value="Surveillance Systems">Surveillance Systems</option>
-  <option value="Biometric Systems">Biometric Systems</option>
-</select>
+<section id="booking" class="booking">
+  <h2>Schedule a Booking</h2>
+  <form id="bookingForm">
+    <input type="text" name="name" placeholder="Name" required>
+    
+    <select name="service" required>
+      <option value="" disabled selected>Select Service</option>
+      <option>IT Products & Services</option>
+      <option>Website Design</option>
+      <option>Surveillance Systems</option>
+      <option>Biometric Systems</option>
+    </select>
 
-      <input type="text" name="phone" placeholder="Phone Number" required>
-    </form>
-  </section>
+    <input type="date" name="date" required>
+    <input type="text" name="phone" placeholder="Phone Number" required>
 
-  <section id="contact" class="contact">
-    <h2>Contact Us</h2>
-    <p><strong>Email:</strong> ekawadeinfotech@gmail.com</p>
-    <p><strong>Phone:</strong> 7030304581</p>
-    <p><strong>Address:</strong> Desai Nagar, Sanquelim, Goa</p>
-    <a href="https://www.instagram.com/ekawade_infotech" target="_blank"><img src="https://www.svgrepo.com/show/512399/instagram-167.svg" alt="Instagram" width="20" height="20"></a>
-    <a href="https://wa.me/7030304581" target="_blank"><img src="https://www.svgrepo.com/show/510342/whatsapp.svg" alt="WhatsApp" width="30" height="20"></a>
+    <button type="submit">Book via WhatsApp</button>
+  </form>
+</section>
 
-    <div style="text-align:center; margin-top: 1.5rem;">
-      <a href="https://g.page/r/CezVtfcZCv34EAE/review" target="_blank" style="
-        display: inline-block;
-        background-color: #0055aa;
-        color: white;
-        font-weight: bold;
-        padding: 12px 24px;
-        border-radius: 8px;
-        text-decoration: none;
-        transition: background-color 0.3s ease;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-      " onmouseover="this.style.backgroundColor='#003f80'" onmouseout="this.style.backgroundColor='#0055aa'">
-        ⭐ Give Feedback / Review Us
-      </a>
-    </div>
-  </section>
+<section id="contact" class="contact"> <h2>Contact Us</h2> <p><strong>Email:</strong> ekawadeinfotech@gmail.com</p> <p><strong>Phone:</strong> 7030304581</p> <p><strong>Address:</strong> Desai Nagar, Sanquelim, Goa</p> <a href="https://www.instagram.com/ekawade_infotech" target="_blank"><img src="https://www.svgrepo.com/show/512399/instagram-167.svg" alt="Instagram" width="20" height="20"></a> <a href="https://wa.me/7030304581" target="_blank"><img src="https://www.svgrepo.com/show/510342/whatsapp.svg" alt="WhatsApp" width="30" height="20"></a> <div style="text-align:center; margin-top: 1.5rem;"> <a href="https://g.page/r/CezVtfcZCv34EAE/review" target="_blank" style=" display: inline-block; background-color: #0055aa; color: white; font-weight: bold; padding: 12px 24px; border-radius: 8px; text-decoration: none; transition: background-color 0.3s ease; box-shadow: 0 4px 10px rgba(0,0,0,0.15); " onmouseover="this.style.backgroundColor='#003f80'" onmouseout="this.style.backgroundColor='#0055aa'"> ⭐ Give Feedback / Review Us </a> </div> </section>
+<footer>
+  <p>&copy; 2025 Ekawade Infotech</p>
+</footer>
 
-  <footer>
-    <p>&copy; 2025 Ekawade Infotech. All rights reserved.</p>
-  </footer>
-
-<!-- Booking Confirmation Popup -->
 <div id="confirmModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:2000;align-items:center;justify-content:center;">
   <div style="background:#fff;padding:2rem;border-radius:12px;max-width:400px;width:90%;text-align:center;">
     <h3 style="color:#0055aa;">Confirm Booking</h3>
-    <div id="confirmDetails"></div>
+    <div id="confirmDetails" style="text-align: left; margin: 1rem 0; font-size: 0.9rem; line-height: 1.6;"></div>
     <div style="display:flex;gap:1rem;margin-top:1.5rem;">
-      <button id="confirmBtn">Confirm</button>
+      <button id="confirmBtn">Confirm & Send</button>
       <button id="cancelBtn">Cancel</button>
     </div>
   </div>
 </div>
 
 <script>
-  // Prevent past dates
-  document.querySelector('input[type="date"]').min =
-    new Date().toISOString().split("T")[0];
+  // Prevent past dates in the calendar
+  document.querySelector('input[type="date"]').min = new Date().toISOString().split("T")[0];
 
   const bookingForm = document.getElementById("bookingForm");
   const modal = document.getElementById("confirmModal");
@@ -267,29 +232,38 @@
   bookingForm.addEventListener("submit", function(e) {
     e.preventDefault();
 
-    const { name, email, service, date, phone } = bookingForm;
-    const message =
-`📅 New Booking Request
-👤 ${name.value}
-🛠 ${service.value}
-📧 ${email.value}
-📞 ${phone.value}
-🗓 ${date.value}`;
+    // Get values from the form
+    const name = bookingForm.name.value;
+    const service = bookingForm.service.value;
+    const date = bookingForm.date.value;
+    const phone = bookingForm.phone.value;
 
-    const number = "917030304581";
+    // Construct the WhatsApp Message
+    const message = `*📅 New Booking Request*
+*Name:* ${name}
+*Service:* ${service}
+*Phone:* ${phone}
+*Date:* ${date}`;
+
+    const phoneNumber = "917030304581"; // Format: CountryCode + Number
+    
+    // Check if user is on mobile
     const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    
+    // Create WhatsApp URL
+    whatsappURL = isMobile 
+      ? `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(message)}`
+      : `https://web.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(message)}`;
 
-    whatsappURL = isMobile
-      ? `whatsapp://send?phone=${number}&text=${encodeURIComponent(message)}`
-      : `https://web.whatsapp.com/send?phone=${number}&text=${encodeURIComponent(message)}`;
-
+    // Populate Modal Details
     confirmDetails.innerHTML = `
-      <p><strong>Name:</strong> ${name.value}</p>
-      <p><strong>Service:</strong> ${service.value}</p>
-      <p><strong>Date:</strong> ${date.value}</p>
-      <p><strong>Phone:</strong> ${phone.value}</p>
+      <p><strong>Name:</strong> ${name}</p>
+      <p><strong>Service:</strong> ${service}</p>
+      <p><strong>Date:</strong> ${date}</p>
+      <p><strong>Phone:</strong> ${phone}</p>
     `;
 
+    // Show Modal
     modal.style.display = "flex";
   });
 
@@ -299,7 +273,16 @@
     bookingForm.reset();
   };
 
-  cancelBtn.onclick = () => modal.style.display = "none";
+  cancelBtn.onclick = () => {
+    modal.style.display = "none";
+  };
+
+  // Close modal if user clicks outside of it
+  window.onclick = (event) => {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  };
 </script>
 
 </body>
