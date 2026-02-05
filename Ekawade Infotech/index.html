@@ -198,11 +198,16 @@
     <div id="bookingMessage" role="status" aria-live="polite" style="text-align:center;margin-bottom:1rem;font-weight:600;"></div>
 
     <form id="bookingForm">
-      <input type="text" name="name" placeholder="Name" required>
-      <input type="email" name="email" placeholder="Email" required>
-      <input type="date" name="date" required>
+      <select name="service" required>
+  <option value="" disabled selected>Select Service</option>
+  <option value="IT Products & Services">IT Products & Services</option>
+  <option value="Website Design">Website Design</option>
+  <option value="Surveillance Systems">Surveillance Systems</option>
+  <option value="Biometric Systems">Biometric Systems</option>
+</select>
+
+<input type="text" name="phone" placeholder="Phone Number" required>
       <input type="text" name="phone" placeholder="Phone Number" required>
-      <button type="submit">Book</button>
     </form>
   </section>
 
@@ -235,35 +240,68 @@
     <p>&copy; 2025 Ekawade Infotech. All rights reserved.</p>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-  <script>
-    (function(){ emailjs.init("NPj3F96VQd_ZBYBM9"); })();
-    const bookingForm = document.getElementById("bookingForm");
-    const bookingMessage = document.getElementById("bookingMessage");
+<!-- Booking Confirmation Popup -->
+<div id="confirmModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:2000;align-items:center;justify-content:center;">
+  <div style="background:#fff;padding:2rem;border-radius:12px;max-width:400px;width:90%;text-align:center;">
+    <h3 style="color:#0055aa;">Confirm Booking</h3>
+    <div id="confirmDetails"></div>
+    <div style="display:flex;gap:1rem;margin-top:1.5rem;">
+      <button id="confirmBtn">Confirm</button>
+      <button id="cancelBtn">Cancel</button>
+    </div>
+  </div>
+</div>
 
-    bookingForm.addEventListener("submit", function(e) {
-      e.preventDefault();
-      bookingMessage.textContent = "Sending booking request...";
-      bookingMessage.style.color = "#003366";
+<script>
+  // Prevent past dates
+  document.querySelector('input[type="date"]').min =
+    new Date().toISOString().split("T")[0];
 
-      const params = {
-        name: bookingForm.name.value,
-        email: bookingForm.email.value,
-        date: bookingForm.date.value,
-        phone: bookingForm.phone.value,
-      };
+  const bookingForm = document.getElementById("bookingForm");
+  const modal = document.getElementById("confirmModal");
+  const confirmDetails = document.getElementById("confirmDetails");
+  const confirmBtn = document.getElementById("confirmBtn");
+  const cancelBtn = document.getElementById("cancelBtn");
 
-      emailjs.send("service_79cmrdr", "template_nbr71hm", params)
-        .then(() => {
-          bookingMessage.textContent = "✅ Booking sent successfully! We’ll contact you soon.";
-          bookingMessage.style.color = "green";
-          bookingForm.reset();
-        })
-        .catch(() => {
-          bookingMessage.textContent = "❌ Failed to send booking. Please try again.";
-          bookingMessage.style.color = "red";
-        });
-    });
-  </script>
+  let whatsappURL = "";
+
+  bookingForm.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const { name, email, service, date, phone } = bookingForm;
+    const message =
+`📅 New Booking Request
+👤 ${name.value}
+🛠 ${service.value}
+📧 ${email.value}
+📞 ${phone.value}
+🗓 ${date.value}`;
+
+    const number = "917030304581";
+    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+    whatsappURL = isMobile
+      ? `whatsapp://send?phone=${number}&text=${encodeURIComponent(message)}`
+      : `https://web.whatsapp.com/send?phone=${number}&text=${encodeURIComponent(message)}`;
+
+    confirmDetails.innerHTML = `
+      <p><strong>Name:</strong> ${name.value}</p>
+      <p><strong>Service:</strong> ${service.value}</p>
+      <p><strong>Date:</strong> ${date.value}</p>
+      <p><strong>Phone:</strong> ${phone.value}</p>
+    `;
+
+    modal.style.display = "flex";
+  });
+
+  confirmBtn.onclick = () => {
+    modal.style.display = "none";
+    window.open(whatsappURL, "_blank");
+    bookingForm.reset();
+  };
+
+  cancelBtn.onclick = () => modal.style.display = "none";
+</script>
+
 </body>
 </html>
