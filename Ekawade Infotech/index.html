@@ -9,6 +9,44 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
   <style>
+    /* ===== LOGO SCROLL STRIP ===== */
+.logo-strip {
+  overflow: hidden;
+  background: var(--white);
+  padding: 20px 0;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+
+.logo-track {
+  display: flex;
+  gap: 80px;
+  width: max-content;
+  animation: logoScroll 20s linear infinite;
+}
+
+/* 🔥 Hover = Pause */
+.logo-strip:hover .logo-track {
+  animation-play-state: paused;
+}
+
+.logo-track img {
+  height: 35px;
+  opacity: 0.7;
+  transition: 0.3s;
+  filter: grayscale(0%);
+}
+
+.logo-track img:hover {
+  opacity: 1;
+  transform: scale(1.1);
+  filter: grayscale(0%);
+}
+
+@keyframes logoScroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
     :root {
       --blue: #0055aa;
       --light-blue: #e6f0ff;
@@ -173,7 +211,54 @@
   <h1>Ekawade Infotech</h1>
   <p>IT Products & Services | Surveillance Systems | Biometric Solutions</p>
 </header>
+<!-- ===== BRAND LOGO SCROLL ===== -->
+<div class="logo-strip">
+  <div class="logo-track">
 
+    <img src="images/image/HP.svg" alt="HP">
+    <img src="images/image/Acer.svg" alt="Acer">
+    <img src="images/image/Lenovo.svg" alt="Lenovo">
+    <img src="images/image/Dell.svg" alt="Dell">
+    <img src="images/image/Zebronics.png" alt="Zebronics">
+    <img src="images/image/hikvison.svg" alt="Hikvision">
+    <img src="images/image/cpplus.png" alt="CP Plus">
+    <img src="images/image/dahua.svg" alt="Dahua">
+    <img src="images/image/logitech.svg" alt="Logitech">
+    <img src="images/image/hdmi.png" alt="HDMI">
+    <img src="images/image/Consistant.png" alt="Consistant">
+    <img src="images/image/Sandisk.svg" alt="SanDisk">
+    <img src="images/image/Samsung.svg"  alt="Samsung">
+    <img src="images/image/seagate.svg" alt="Seagate">
+    <img src="images/image/BenQ.svg" alt="BenQ">
+    <img src="images/image/cisco.svg" alt="Cisco">
+    <img src="images/image/Dlink.png" alt="D-Link">
+    
+    
+
+
+    <!-- duplicate for seamless loop -->
+    <img src="images/image/HP.svg" alt="HP">
+    <img src="images/image/Acer.svg" alt="Acer">
+    <img src="images/image/Lenovo.svg" alt="Lenovo">
+    <img src="images/image/Dell.svg" alt="Dell">
+    <img src="images/image/Zebronics.png" alt="Zebronics">
+    <img src="images/image/hikvison.svg" alt="Hikvision">
+    <img src="images/image/cpplus.png" alt="CP Plus">
+    <img src="images/image/dahua.svg" alt="Dahua">
+    <img src="images/image/logitech.svg" alt="Logitech">
+    <img src="images/image/hdmi.png" alt="HDMI">
+    <img src="images/image/Consistant.png" alt="Consistant">
+    <img src="images/image/Sandisk.svg" alt="SanDisk">
+    <img src="images/image/Samsung.svg"  alt="Samsung">
+    <img src="images/image/seagate.svg" alt="Seagate">
+    <img src="images/image/BenQ.svg" alt="BenQ">
+    <img src="images/image/cisco.svg" alt="Cisco">
+    <img src="images/image/Dlink.png" alt="D-Link">
+
+    
+
+  </div>
+</div>
 <section id="about" class="about">
   <h2>About Us</h2>
   <p>Ekawade Infotech is an India-based IT Sales & Consulting firm serving startups and businesses across India and global markets. We help organizations adopt the right technology through reliable IT products, expert consulting, and scalable solutions designed for growth.
